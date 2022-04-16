@@ -13,7 +13,7 @@
   - 按钮权限 (directives)
   - 面包屑组件
   - 组件驱动动态CSS
-  - 动态换肤思路 （根据用户选定的色值替换SCSS变量）
+  - 动态换肤思路 （根据用户选定的色值替换SCSS变量） getters.js会导入variables
   - tagsView 
 
 
