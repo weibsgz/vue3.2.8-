@@ -1,4 +1,5 @@
 <template>
+  <!-- :model-value 是dialog组件 控制显示隐藏的方法 -->
   <el-dialog title="提示" :model-value="modelValue" @close="closed" width="22%">
     <div class="center">
       <p class="title">主题色更换</p>

@@ -18,6 +18,8 @@ export default {
   actions: {
        /**
      * 根据权限筛选路由
+     * meus是全选数据，接口返回的 返回格式： ["userManage", "roleList", "permissionList", "articleRanking", "articleCreate"]
+     * 根据这个筛选私有路由表应该保留哪些
      */
     filterRoutes(context, menus) {
       const routes = []

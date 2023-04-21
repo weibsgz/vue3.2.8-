@@ -9,7 +9,12 @@ import PermissionListRouter from './modules/PermissionList'
 import RoleListRouter from './modules/RoleList'
 import UserManageRouter from './modules/UserManage'
 import store from '@/store'
+import UserManage from "./modules/UserManage";
+import PermissionList from "./modules/PermissionList";
+import Article from "./modules/Article";
 
+
+// 这个私有路由表在 store/modules/permission.js里使用
 export const privateRoutes = [
   RoleListRouter,
   UserManageRouter,
@@ -18,6 +23,14 @@ export const privateRoutes = [
   ArticleRouter
 ]
 
+// 菜单结构
+
+// -user
+//   -- UserManage
+//   -- PermissionList
+// -article
+//   -- articleRanking
+//   -- articleCreate
 
 
 
@@ -122,7 +135,7 @@ export const privateRoutes = [
 /**
  * 公开路由表 无权限得路由
  */
-export const publicRoutes = [
+export var publicRoutes = [
   {
     path: "/login",
     component: () => import("@/views/login/index"),
@@ -159,7 +172,17 @@ export const publicRoutes = [
 const router = createRouter({
   history: createWebHashHistory(),
   //routes: [...publicRoutes, ...privateRoutes], //为了做权限 私有路由表根据权限用addRoutes动态添加
-   routes:publicRoutes
+   routes:publicRoutes,
+   scrollBehavior(to, from, savedPosition) {
+    console.log('savedPosition',savedPosition)
+    if (savedPosition) {
+      console.log('有')
+      return savedPosition
+    } else {
+      console.log('无')
+      return { top: 0 }
+    }
+  }
 });
 
 

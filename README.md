@@ -9,12 +9,13 @@
 	- 请求，缓存模块
   - 基于layout布局
   - 动态菜单生成 (getRoutes)
-  - 菜单权限 (addRoutes)
+  - 菜单权限,根据权限生成不同的路由表 /store/moudels/permisson.js (核心 vue-route的addRoutes)
   - 按钮权限 (directives)
-  - 面包屑组件
-  - 组件驱动动态CSS
+  - 面包屑组件 (route.matched)
+  - 组件驱动动态CSS (css中 v-bind)
   - 动态换肤思路 （根据用户选定的色值替换SCSS变量） getters.js会导入variables
-  - tagsView 
+  - tagsView (包含右键菜单)
+  - guide 引导
 
 
 菜单权限两种思路
@@ -118,7 +119,8 @@
    路由需要公有路由 和 私有路由  我们处理的是根据返回的权限 来动态插入匹配到的私有路由（addRoutes方法）
 
    本项目中  
-   - 把私有路由分成几块（根据不同权限） `./store/modules`
+   - 把私有路由分成几块（根据不同权限） `./router/modules`  注意，本项目中有5个页面，3个页面属于userManage（所有一级路由都是userManage）  
+     2个页面属于article(同理) 这是为了让这些私有路由合在一起后都是一级路由便于筛选（在store/modules/persmisson.js）
 
    - 根据权限筛选路由 menus 是后端返回的权限字段 `["userManage", "roleList", "permissionList", "articleRanking", "articleCreate"]`
      privateRoutes是拆分好的私有路由集合 每个私有路由上的name和 menus中的字段对应

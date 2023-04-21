@@ -17,7 +17,7 @@ function checkPermission(el, binding) {
     }
   } else {
     // eslint-disabled-next-line
-    throw new Error('v-permission value is ["admin","editor"]')
+    throw new Error('v-permission value 必须是数组 形式为["admin","editor"]')
   }
 }
 

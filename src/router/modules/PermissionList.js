@@ -4,7 +4,7 @@ export default {
   path: '/user',
   component: layout,
   redirect: '/user/manage',
-  name: 'roleList', //对应获取用户信息的接口(profile)返回的权限名称 
+  name: 'permissionList', //对应获取用户信息的接口(profile)返回的权限名称 
   meta: {
     title: 'user',
     icon: 'personnel'

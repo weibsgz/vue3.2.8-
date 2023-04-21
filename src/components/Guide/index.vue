@@ -17,6 +17,7 @@ import steps from './step.js'
 let driver = null
 onMounted(() => {
   driver = new Driver({
+    animate: true,
     // 禁止点击蒙版关闭
     allowClose: false,
     closeBtnText: '关闭',
@@ -35,5 +36,8 @@ const onClick = () => {
 </script>
 
 
-<style scoped></style>
+<style scoped>
+
+
+</style>
 

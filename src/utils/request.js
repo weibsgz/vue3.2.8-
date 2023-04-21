@@ -11,6 +11,8 @@ const service = axios.create({
 // 请求拦截器
 service.interceptors.request.use(
   (config) => {
+
+    config.headers.icode = '41E2A32C620056BB'
     // 在这个位置需要统一的去注入token
     if (store.getters.token) {
       //判断TOKEN是否过期（前端主动判断，一般后端通过状态码告知前端）

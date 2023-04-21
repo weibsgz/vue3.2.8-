@@ -22,7 +22,7 @@
     </template>
   </el-dropdown>
   <!-- 展示弹出层 -->
-  <div><select-color v-model="selectColorVisible"></select-color></div>
+  <div><select-color v-model:modelValue="selectColorVisible"></select-color></div>
 </template>
 
 <script setup>

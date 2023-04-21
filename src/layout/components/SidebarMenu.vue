@@ -21,7 +21,7 @@
 <script setup>
 import { computed } from "vue";
 import { useRoute, useRouter } from "vue-router";
-import { filterRouters, generateMenus } from "@/utils/route";
+import { filterRouters, generateMenus, generateMenus1} from "@/utils/route";
 import SidebarItem from "./SidebarItem.vue";
 
 const route = useRoute(); //.query .params matched当前匹配得路由 等参数
@@ -31,6 +31,10 @@ const router = useRouter(); // push replace getRoutes back等操作
 console.log("router.getRoutes()", router.getRoutes());
 
 const routes = computed(() => {
+//   使用route.getRoutes() 返回得是完成得路由表 存在两个问题
+
+// 1，存在重复的路由数据（因为完整的路由表会把路由一级的和二级的（children）都放在一个一维数组里，所以我们要去重）
+// 2，不满足该条件 meta && meta.title && meta.icon 的数据不应该存在
   const filterRoutes = filterRouters(router.getRoutes());
   console.log("filterRoutes", filterRoutes);
   return generateMenus(filterRoutes);

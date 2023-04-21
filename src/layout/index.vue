@@ -27,7 +27,7 @@ import tagsView from '@/components/tagsview'
 import { computed } from "vue";
 import { useStore } from "vuex";
 
-import variables from "@/styles/variables.scss"; //JS中导入SCSS设置的变量
+// import variables from "@/styles/variables.scss"; //JS中导入SCSS设置的变量
 
 const store = useStore();
 
@@ -54,7 +54,7 @@ const bgColor = computed(() => {
   width: calc(100% - #{$sideBarWidth});
   transition: width 0.28s;
 }
-
+//侧边栏收起后，宽度要减去收起后的宽度
 .hideSidebar .fixed-header {
   width: calc(100% - #{$hideSideBarWidth});
 }

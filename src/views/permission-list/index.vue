@@ -1,5 +1,5 @@
 <template>
- <div class="">
+ <div class="" style="height: 2000px;">
    <el-card>
      <el-table
        :data="allPermission"
@@ -28,6 +28,8 @@
        </el-table-column>
      </el-table>
    </el-card>
+
+   
  </div>
 </template>
 

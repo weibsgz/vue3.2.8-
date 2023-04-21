@@ -87,12 +87,12 @@ const onShowClick = () => {
 // search 相关
 const search = ref('')
 // 搜索方法
-const querySearch = () => {
-  console.log('querySearch')
+const querySearch = (val) => {
+  console.log('querySearch',val)
 }
 // 选中回调
-const onSelectChange = () => {
-  console.log('onSelectChange')
+const onSelectChange = (val) => {
+  console.log('onSelectChange',val)
 }
 </script>
 

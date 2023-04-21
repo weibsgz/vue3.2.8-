@@ -26,7 +26,8 @@ const hoverColor = ref(store.getters.cssVar.menuBg);
 watch(
   route,
   () => {
-    console.log("watch");
+    console.log("route.matched",route.matched);
+    //route.matched 获取当前路由的路由链表
     breadList.value = route.matched.filter((v) => v.meta && v.meta.title);
     console.log("route.matched", breadList.value);
   },
@@ -59,12 +60,13 @@ watch(
 }
 
 .breadcrumb-enter-from,
-.breadcrumb-leave-active {
+.breadcrumb-leave-to {
   opacity: 0;
   transform: translateX(20px);
 }
 
 .breadcrumb-leave-active {
+  display: inline-block; /* 加上这一句防止布局方式变化引起的最左侧重影问题 */
   position: absolute;
 }
 </style>
